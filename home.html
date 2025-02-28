@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joshua Omeje</title>
+    <link href="main.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    
+<!--Naviagtion-->
+<div class="main-nav-cntr">
+
+    <div class="logo-cntr">
+       <a href="home.html"><img src="grin smile.png" class="logo"></a>
+    </div>
+
+    <div class="nav-links-cntr">
+        <a href="home.html"><img src="vecteezy_home-icon-isolated-on-transparent-background-black-symbol_14391893.png" class="home-img"></a>
+        <a href="#about"><p class="nav-item">About</p></a>
+        <a href="#skills"><p class="nav-item">Skills</p></a>
+        <a href="#"><p class="nav-item">Portfolio</p></a>
+        <a href="#"><p class="nav-item">Contact</p></a>
+        <a href="#"><p class="resume">Resume</p></a>
+    </div>
+</div>
+
+<!--hero-section-->
+<div class="hero-cntr">
+
+    <div class="left-side">
+        <div class="text-cntr">
+        <p class="hero-sub-heading">hey there, im</p>
+        <h1 class="hero-heading">Joshua Omeje</h1>
+        <h2 class="hero-sub-text">Aspiring Software Engineer</h2>
+        <div class="container">
+            <p class="hero-sub-desc">Passionate About: <span></span></p>
+        </div>  
+        <a href="#about"><button class="about-me-link">About Me</button></a>      
+        </div>
+    </div>
+    
+    <script>
+        const textElement = document.querySelector(".hero-sub-desc span"); // Selects only the changing text
+        const words = ["Web Development", "Video Editing", "Anime", "Basketball"];
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingSpeed = 150;  // Speed of typing
+        const deletingSpeed = 100;  // Speed of deleting
+        const pauseTime = 1000;  // Pause before deleting
+    
+        function typeEffect() {
+            let currentWord = words[wordIndex]; 
+            let displayText = currentWord.substring(0, charIndex);
+    
+            textElement.textContent = displayText; // Only update the changing word
+    
+            if (!isDeleting) {
+                charIndex++;
+                if (charIndex > currentWord.length) {
+                    isDeleting = true;
+                    setTimeout(typeEffect, pauseTime); // Pause before deleting
+                    return;
+                }
+            } else {
+                charIndex--;
+                if (charIndex === 0) {
+                    isDeleting = false;
+                    wordIndex = (wordIndex + 1) % words.length; // Switch words
+                }
+            }
+    
+            setTimeout(typeEffect, isDeleting ? deletingSpeed : typingSpeed);
+        }
+    
+        document.addEventListener("DOMContentLoaded", () => {
+            setTimeout(typeEffect, 500); // Start after page loads
+        });
+    </script>
+    
+    <div class="right-side">
+        <div class="hero-img-cntr">
+            <img src="bitmoji_hi_wave_slow.gif" class="hero-img">
+        </div>
+    </div>
+</div>
+
+<p class="about-me-thing" id="about">f</p>
+
+
+<div class="about-me-section hidden" >   
+   <div class="about-me-left">
+        <div class="about-me-container">
+        <h1 class="about-me-header">About Me</h1>
+        <p class="about-me-text"><span class="about-me-special">Hi, im Joshua!</span>I'm a 16-year-old web developer passionate about crafting clean and engaging digital experiences. With an eye for design and a love for problem-solving, I enjoy building websites that are both visually appealing and user-friendly.
+        Beyond coding, I’m a curious learner who loves exploring new technologies, reading books, and getting lost in immersive video games. Right now, I’m especially focused on UI design, making sure that the interfaces I create are intuitive, modern, and accessible.
+        I'm always looking for ways to improve my skills and take on exciting projects that challenge me to think outside the box. Whether it’s designing a sleek website layout or refining the details of an interface, I love bringing ideas to life!</p>
+        </div>
+    </div>
+
+    <div class="about-me-right">
+        <img src="unnamed (3).jpg">
+    </div>
+</div>
+
+<div class="skills-container hidden">
+    <h1 class="skills-header" id="skills">Skills</h1>
+    <div class="grid-cntr">
+    <div class="box1">
+        <h1 class="skills-title">Web Design</h1>
+        <p class="skills-description">Proficient in HTML and CSS, with a strong foundation in web layout, styling, and responsiveness. Currently expanding my skills in JavaScript to enhance interactivity and functionality.</p>
+    </div>
+
+    <div class="box1">
+        <h1 class="skills-title">Video Editing</h1>
+        <p class="skills-description">Skilled in video editing with a focus on creative storytelling. Experienced in cutting clips efficiently, adding smooth transitions, and applying effects to enhance visuals. Specialize in vlogging-style edits and dynamic creative filmmaking.</p>
+    </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const hiddenSections = document.querySelectorAll(".hidden");
+    
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                        observer.unobserve(entry.target); // Stop observing once it's visible
+                    }
+                });
+            }, { threshold: 0.2 });
+    
+            hiddenSections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+   <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const observerOptions = { threshold: 0.2 }; // Adjust trigger sensitivity
+
+        function createObserver(targets, className) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add(className);
+                    } else {
+                        entry.target.classList.remove(className); // Resets animation when leaving view
+                    }
+                });
+            }, observerOptions);
+
+            targets.forEach((target) => observer.observe(target));
+        }
+
+        // Observe Hero Section, Logo, About Me, and Skills Panel
+        createObserver([document.querySelector(".hero-cntr")], "show");
+        createObserver([document.querySelector(".logo")], "show");
+        createObserver([document.querySelector(".about-me-section")], "show");
+        createObserver([document.querySelector(".skills-container")], "show");
+    });
+</script>
+
+</div>
+
+</body>
+</html>

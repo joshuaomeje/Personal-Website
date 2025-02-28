@@ -1,0 +1,349 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: os;
+    src: url(OpenSans-VariableFont_wdth\,wght.ttf);
+}
+
+
+.main-nav-cntr{
+    top:0;
+    height: 100px;
+   margin: 0px 30px;
+   display: flex;
+   justify-content: space-between;
+   position: fixed;
+   width: 100%;
+    background-color: #ffffff;
+   z-index: 1000;
+   padding-right: 20px;
+}
+
+.logo{
+    width:90px;
+    height: 90px;
+    background-color: rgb(255, 255, 255);
+    padding: 10px 10px;
+    border-radius: 360px;
+ 
+}
+
+.logo:hover{
+    background-color: #4E733E;
+}
+
+.home-img{
+    width: 40px;
+    margin: 20px;
+}
+
+.home-img:hover{
+    transform: scale(1.1); /* Slight growth effect */ 
+}
+.nav-links-cntr{
+    display: flex;
+    align-items: center;
+}
+
+.nav-item{
+    color: black;
+    text-decoration: none;
+    margin-right: 30px;
+    font-size: 20px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    padding:20px 20px;
+    border-radius: 10px;
+    font-family: os;
+}
+
+.nav-item:hover{
+    color: #4E733E;
+}
+.resume{
+    color: black;
+    text-decoration: none;
+    margin-right: 30px;
+    background-color: #f4f4f4;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    padding:20px 15px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-family: os;
+}
+
+.resume:hover{
+background-color: #4E733E;
+color: #ffffff;
+}
+
+
+a,p{
+    text-decoration: none;
+}
+
+.about-me-header, .skills-header, .hero-heading {
+    color: #4E733E; /* Warm Orange */
+}
+/*hero-section*/
+.hero-cntr{
+    background-color: rgb(255, 255, 255);
+    height: 550px;
+    margin-left: 100px;
+    margin-right: 100px;
+    display: flex;   
+    border-radius: 10px;
+    margin-top: 90px;
+    margin-bottom: 20px;
+}
+
+.left-side{
+    width:50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+   
+}
+
+.hero-sub-heading{
+    font-family: os;
+    font-size: 30px;
+}
+
+.hero-heading{
+    font-family: os;
+    font-size: 70px;
+}
+
+.hero-sub-text{
+    padding-top: 10px;
+    font-family: os;
+    font-size: 30px;
+}
+
+.hero-sub-desc {
+    font-family: os;
+    font-size: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    padding-top: 20px;
+}
+
+/* Cursor stays inside the span */
+.hero-sub-desc span::after {
+    content: "|"; /* Blinking cursor */
+    font-weight: bold;
+    display: inline-block;
+    animation: cursor-blink 0.6s step-end infinite;
+}
+
+/* Cursor Blinking Effect */
+@keyframes cursor-blink {
+    50% { opacity: 0; }
+}
+
+.right-side {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center; /* Centers the box */
+    align-items: center; /* Centers the box vertically */
+}
+
+.hero-img-cntr {
+    background-color: #ffffff; /* Box background color */
+    padding: 15px 30px; /* Adjusted padding for a better box shape */
+    border-radius: 20px; /* Rounded corners */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1000px; /* Prevents the box from getting too wide */
+    width: 80%; /* Ensures responsiveness */
+    border: 5px solid black;
+}
+
+
+.hero-img-cntr:hover{
+    background-color: #4E733E;
+    transition: all 0.3s ease-in-out;
+}
+
+
+
+.hero-img {
+    max-width: 100%; /* Keeps the image inside the box */
+    height: auto; /* Maintains aspect ratio */
+}
+
+/*about me*/
+.about-me-section{
+    background-color: rgb(255, 255, 255);
+    height: 550px;
+    margin-left: 200px;
+    margin-right: 200px;
+    display: flex;
+    border: 2px solid black;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 70px;
+    margin-top: 85px;
+}
+
+.about-me-link{
+    margin-top: 0px;
+    color: #ffffff;
+    font-family: os;
+    background-color: #4E733E;
+    padding: 20px 20px;
+    font-size: 18px;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: 2px solid black
+}
+
+.about-me-link:hover{
+    background-color: #3E7D4E;
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.about-me-thing{
+    color: #ffffff;
+}
+.about-me-left{
+    width: 71%;
+    display: flex;
+    align-items: center;
+}
+
+.about-me-header{
+    text-align: center;
+    padding-top: 30px;
+    font-family: os;
+    font-size: 50px;
+}
+
+.about-me-text{
+    padding: 20px 60px;
+    font-family: os;
+    line-height: 30px;
+}
+
+.about-me-special{
+font-size: 20px;
+margin-right: 6px;
+}
+
+/*skills*/
+.skills-container{
+    height: 350px;
+    margin: 170px 100px;
+    overflow: hidden;
+}
+
+.box1{
+    height: 250px;
+    margin: 20px;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+.box1:hover{
+    background-color: #4E733E;
+    color: #ffffff;
+}
+
+.grid-cntr{
+    display: flex;
+}
+
+.skills-header{
+    font-family: os;
+    font-size: 40px;
+}
+
+.skills-title{
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    font-family: os;
+}
+
+.skills-description{
+    font-family: os;
+    padding: 20px 40px;
+    text-align: center;
+}
+
+/*transition*/
+/* Smooth transition for all hoverable elements */
+.nav-item, .resume, .hero-img, .box1 {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Navigation hover effect */
+.nav-item:hover {
+    color: #3E7D4E; /* Lighter earthy green */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Resume button hover effect */
+.resume:hover {
+    background-color: #3E7D4E;
+    transform: scale(1.1); /* Slight growth effect */
+}
+
+/* Box hover effect */
+.box1:hover {
+    transform: translateY(-5px); /* Moves up slightly */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Adds depth */
+}
+/* Default state: Panels are hidden and moved slightly off-screen */
+.hidden {
+    opacity: 0;
+    transform: translateY(50px); /* Start position */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0); /* Moves to normal position */
+}
+.hero-cntr {
+    opacity: 0;
+    transform: translateY(50px); /* Starts lower */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.hero-cntr.show {
+    opacity: 1;
+    transform: translateY(0); /* Moves to normal position */
+}
+
+.logo {
+    opacity: 0;
+    transform: scale(0.8); /* Starts smaller */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Smooth initial animation */
+}
+
+/* Scroll animation */
+.logo.show {
+    opacity: 1;
+    transform: scale(1); /* Grows to normal size */
+}
+
+/* Hover animation */
+.logo:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+    transition: transform 0.3s ease-in-out; /* Smooth hover transition */
+}
